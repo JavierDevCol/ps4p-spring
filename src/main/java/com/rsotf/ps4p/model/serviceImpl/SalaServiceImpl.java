@@ -23,8 +23,7 @@ public class SalaServiceImpl implements ISalaService{
 	
 	@Override
 	@Transactional(readOnly = true)
-	public SalaEntity finById(Long id) {
-		// TODO Auto-generated method stub
+	public SalaEntity findById(Long id) {		
 		return salaDao.findById(id).orElse(null);
 	}
 

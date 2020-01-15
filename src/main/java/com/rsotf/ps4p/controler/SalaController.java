@@ -50,4 +50,18 @@ public class SalaController {
 	public @ResponseBody List<AccesorioEntity> cargarAccesorios(@PathVariable String name) {
 		return salaService.findByNombreLikeIgnoreCase(name);
 	}
+	
+	@GetMapping("/formP/{id}")
+	 public String edit(@PathVariable(value = "id") Long id, Model model ) {
+		 
+		 SalaEntity sala = null;
+		 if (id > 0 ) {
+			sala = salaService.findById(id);
+		}else {
+			return "redirect:/list";
+		}
+		 model.addAttribute("sala", sala);
+		 model.addAttribute("titulo","popo SALA");
+		 return "sala/form";
+	 }
 }

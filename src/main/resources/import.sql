@@ -11,3 +11,5 @@ INSERT INTO edificio (nombre, alias) VALUES ("Casona", "Casona");
 INSERT INTO edificio (nombre, alias) VALUES ("Torre Administrativa A", "TA");
 INSERT INTO edificio (nombre, alias) VALUES ("Torre Administrativa B", "TB");
 INSERT INTO edificio (nombre, alias) VALUES ("Cread", "CREAD");
+
+INSERT INTO accesorios (descripcion, estado, nombre, num_inventario, sala_id)  VALUES ("hola","bueno","tv", "123qwe", null);

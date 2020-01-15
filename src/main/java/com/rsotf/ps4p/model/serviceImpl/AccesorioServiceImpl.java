@@ -28,7 +28,7 @@ public class AccesorioServiceImpl implements IAccesorioService{
 
 	@Override
 	public void save(AccesorioEntity accesorio) {
-		// TODO Auto-generated method stub
+		accesorioDao.save(accesorio);
 		
 	}
 

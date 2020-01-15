@@ -9,7 +9,7 @@
 			<u th:text="${titulo}"></u>
 		</h1>
 
-		<form th:action="@{/accesorios/save}" th:object="${acces}" method="post">
+		<form th:action="@{/accesorios/save}" th:object="${accesorio}" method="post">
 			<div class="row">				
 				<div class="col">
 					<input type="text" class="form-control" placeholder="Nombre Accesorio" required th:field="*{nombre}" />

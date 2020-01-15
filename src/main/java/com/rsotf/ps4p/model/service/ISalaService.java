@@ -7,7 +7,7 @@ import com.rsotf.ps4p.model.entity.SalaEntity;
 
 public interface ISalaService {
 	
-	public SalaEntity finById(Long id);
+	public SalaEntity findById(Long id);
 	
 	public void save(SalaEntity sala);
 	

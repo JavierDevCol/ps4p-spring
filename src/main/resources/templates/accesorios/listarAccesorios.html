@@ -7,7 +7,7 @@
 
 	<h1  class="text-primary text-center m-3 pb-5"><u th:text="${titulo}"></u></h1>
 	
-	<a th:href="@{/edificio/form}" class="btn btn-success mb-2">Nuevo Edificio</a>
+	<a th:href="@{/accesorios/form}" class="btn btn-success mb-2">Nuevo Edificio</a>
 	<div class="alert alert-success" th:if="${success != null}" th:text="${success}"></div>
 	<div class="alert alert-danger" th:if="${danger != null}" th:text="${success}"></div>
 	<div class="alert alert-info" th:if="${info != null}" th:text="${success}"></div>
@@ -23,17 +23,17 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="acc: ${acces}">
+			<tr th:each="acc: ${accesorio}">
 				<td th:text="${acc.id}"></td>
 				<td th:text="${acc.nombre}"></td>
 				<td th:text="${acc.numInventario}"></td>
 				<td th:text="${acc.descripcion}"></td>
-				<td > <a th:href="@{/accesorios/form/} + ${acces.id}" class="btn btn-primary">Editar</a> </td>
-				<td > <a th:href="@{/accesorios/delete/} + ${acces.id}" class="btn btn-danger">Eliminar</a> </td>
+				<td > <a th:href="@{/accesorios/form/} + ${acc.id}" class="btn btn-primary">Editar</a> </td>
+				<td > <a th:href="@{/accesorios/delete/} + ${acc.id}" class="btn btn-danger">Eliminar</a> </td>
 			</tr>
 		</tbody>
 	</table>
-	<nav th:replace=" paginator-nav :: paginator"></nav>
+	
 </div>
 
 

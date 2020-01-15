@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -29,12 +30,14 @@ public class EquipoEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@NotEmpty
 	private String serial;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	private SalaEntity sala;
 	
 	@Column (name = "numero_inventario", nullable = false)
+	@NotEmpty
 	private  String numeroInventario;
 	
 	@OneToMany(

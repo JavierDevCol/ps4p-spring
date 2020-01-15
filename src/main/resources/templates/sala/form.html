@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" />
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+	<div class="container">
+
+		<h1 class="text-primary text-center m-3 pb-5">
+			<u th:text="${titulo}"></u>
+		</h1>
+
+		<form th:action="@{/salas/form}" th:object="${sala}" method="post">
+			<div class="row">
+				<div class="col">
+					<input type="text" class="form-control" th:value="${sala.edificio.nombre} + ' - '+ ${sala.edificio.alias}" disabled/>
+				</div>
+				<div class="col">
+					<input type="text" class="form-control" placeholder="Nombre Sala" required th:field="*{nombre}" />
+				</div>				
+				
+				<div class="col">
+					<input type="text" class="form-control" placeholder="Capacidad" required th:field="*{capacidadEst}" />
+				</div>
+				<div class="col">
+					<input type="text" class="form-control" placeholder="Accesorio a agregar" required name="buscarAcce" id="buscarAcce" />
+				</div>
+				
+				<div class="col">
+					<input type="submit" class="btn btn-primary" value ="Crear Sala" />
+				</div>
+				
+				
+			</div>			
+		</form>
+	</div>
+
+<footer th:replace="layout/layout :: footer"></footer>
+<script type="text/javascript" th:replace="sala/autoComplete :: javaScript"></script>
+</body>
+</html>

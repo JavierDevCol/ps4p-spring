@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -25,13 +26,19 @@ public class AccesorioEntity implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty
 	private String nombre;
 	
+	@NotEmpty
 	private String estado;
 	
-	private String descripcio;
+	@NotEmpty
+	private String descripcion;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	private EquipoEntity equipo;
+	private SalaEntity sala;
+	
+	@NotEmpty
+	private String numInventario;
 
 }

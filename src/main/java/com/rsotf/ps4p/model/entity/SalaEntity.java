@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -28,6 +29,7 @@ public class SalaEntity implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotEmpty
 	private String nombre;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -40,6 +42,13 @@ public class SalaEntity implements Serializable {
 			)
 	private List<EquipoEntity> equipos;
 	
+	@NotEmpty
 	private String capacidadEst;
+	
+	@OneToMany(
+			mappedBy = "sala",
+			fetch = FetchType.LAZY,
+			cascade = CascadeType.ALL)
+	private List<AccesorioEntity> accesorios;
 
 }

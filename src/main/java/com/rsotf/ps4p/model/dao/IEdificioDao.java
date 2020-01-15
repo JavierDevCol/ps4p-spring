@@ -1,12 +1,10 @@
 package com.rsotf.ps4p.model.dao;
 
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.rsotf.ps4p.model.entity.EdificioEntity;
 
-public interface IEdificioDao {
+public interface IEdificioDao  extends JpaRepository<EdificioEntity, Long>{
 
-	public List<EdificioEntity> listAll();
 	
-	public void save( EdificioEntity edificio);
 }

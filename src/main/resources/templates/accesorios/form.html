@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" />
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+	<div class="container">
+
+		<h1 class="text-primary text-center m-3 pb-5">
+			<u th:text="${titulo}"></u>
+		</h1>
+
+		<form th:action="@{/accesorios/save}" th:object="${acces}" method="post">
+			<div class="row">				
+				<div class="col">
+					<input type="text" class="form-control" placeholder="Nombre Accesorio" required th:field="*{nombre}" />
+				</div>			
+				
+				<div class="col">
+					<input type="text" class="form-control" placeholder="Estado" required th:field="*{estado}" />
+				</div>
+				<div class="col">
+					<input type="text" class="form-control" placeholder="Serial Inventario" required  th:field="*{numInventario}" />
+				</div>
+				<div class="col">
+					<input type="text" class="form-control" placeholder="Descripcion" required th:field="*{descripcion}" />
+				</div>
+				
+				
+				<div class="col">
+					<input type="submit" class="btn btn-primary" value ="Crear Accesorio" />
+				</div>
+				
+				
+			</div>			
+		</form>
+	</div>
+
+<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

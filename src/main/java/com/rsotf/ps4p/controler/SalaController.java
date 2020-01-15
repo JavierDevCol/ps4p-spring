@@ -64,4 +64,19 @@ public class SalaController {
 		 model.addAttribute("titulo","popo SALA");
 		 return "sala/form";
 	 }
+	
+	
+	@GetMapping("/edificios")
+	public String listEdificio(Model model){
+		
+		List<String> list = null;
+		List<EdificioEntity> ed = salaService.findEdificioAll();
+		for (EdificioEntity string : ed) {
+			list.add(string.getNombre());
+		}
+		
+		model.addAttribute("edificios", list);
+		
+		return "";
+	}
 }

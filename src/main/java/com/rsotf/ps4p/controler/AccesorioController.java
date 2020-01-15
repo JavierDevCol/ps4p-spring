@@ -54,8 +54,11 @@ public class AccesorioController {
 	
 	@PostMapping("/save")
 	public String save(@Valid @ModelAttribute("accesorio") AccesorioEntity accesorio, RedirectAttributes flash,SessionStatus status) {
+		SalaEntity sala = null;
+		if (accesorio.getSala() != null) {
+			sala = salaService.findById(accesorio.getSala().getId());
+		}
 		
-		SalaEntity sala = salaService.findById(1l);
 		accesorio.setSala(sala);
 		accesorioService.save(accesorio);
 		status.setComplete();

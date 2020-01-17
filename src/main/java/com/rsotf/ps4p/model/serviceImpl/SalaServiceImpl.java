@@ -56,4 +56,11 @@ public class SalaServiceImpl implements ISalaService{
 		return edificioDao.findAll();
 	}
 
+	@Override
+	public List<SalaEntity> findAll() {
+		
+		return salaDao.findAll();
+	}
+
+	
 }

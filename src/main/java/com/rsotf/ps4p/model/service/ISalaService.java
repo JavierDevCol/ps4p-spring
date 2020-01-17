@@ -10,6 +10,8 @@ public interface ISalaService {
 	
 	public SalaEntity findById(Long id);
 	
+	public List<SalaEntity> findAll();
+	
 	public void save(SalaEntity sala);
 	
 	public void delete(Long id);

@@ -16,3 +16,17 @@ INSERT INTO accesorios (descripcion, estado, nombre, num_inventario, sala_id)  V
 
 
 INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html XMLS="HTTP://WWWW.THYMELEAF.ORG">
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+<div class="container">
+
+	<h1  class="text-primary text-center m-3 pb-5"><u th:text="${titulo}"></u></h1>
+	
+	<a th:href="@{/accesorios/form}" class="btn btn-success mb-2">Nuevo Edificio</a>
+	<div class="alert alert-success" th:if="${success != null}" th:text="${success}"></div>
+	<div class="alert alert-danger" th:if="${danger != null}" th:text="${success}"></div>
+	<div class="alert alert-info" th:if="${info != null}" th:text="${success}"></div>
+	<div class="alert alert-warning" th:if="${warning != null}" th:text="${success}"></div>
+	<table class="table table-striped table-dark">
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Sala</th>
+				<th scope="col">Edificio</th>
+				<th scope="col" >Capacidad</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="sala: ${salas}">
+				<td th:text="${sala.id}"></td>
+				<td th:text="${sala.nombre}"></td>
+				<td th:text="${sala.edificio.nombre}"></td>
+				<td th:text="${sala.capacidadEst}" ></td>
+				<td > <a th:href="@{/salas/formE/} + ${sala.id}" class="btn btn-primary">Editar</a> </td>
+				<td > <a th:href="@{/salas/delete/} + ${sala.id}" class="btn btn-danger">Eliminar</a> </td>
+			</tr>
+		</tbody>
+	</table>
+	
+</div>
+
+
+
+<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+</html>

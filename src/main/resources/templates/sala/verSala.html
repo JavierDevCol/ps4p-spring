@@ -10,13 +10,13 @@
 				<form th:action="@{/salas/save}" th:object="${sala}" method="post">			
 					<div class="form-group">
 						<label>Sala: </label> 
-						<input type="text"class="form-control" th:value="*{nombre}" disabled>
+						<input type="text"class="form-control" th:field="*{nombre}" disabled>
 						</div>
 						<label>Edificio: </label>
-						 <input  class="form-control" type="text" th:value="*{edificio.nombre}" disabled> 
+						 <input  class="form-control" type="text" th:field="*{edificio.nombre}" disabled> 
 						
 						<label>Capaciodad:</label>
-						<input class="form-control" type="text" th:value="*{capacidadEst}">
+						<input class="form-control" type="text" th:field="*{capacidadEst}">
 						
 						<div class="btn-group btn-group-toggle my-2" data-toggle="buttons">							
 							 <label class="btn btn-outline-info btn-sm">

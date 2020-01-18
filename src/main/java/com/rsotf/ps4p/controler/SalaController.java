@@ -102,8 +102,7 @@ public class SalaController {
 	public String verSala(@PathVariable(value = "idSala") Long id, Model model) {
 		SalaEntity sala = salaService.findById(id);
 		model.addAttribute("sala", sala);
-		model.addAttribute("titulo", "Informacion de Sala ");
-		
+		model.addAttribute("titulo", "Informacion de Sala ");		
 		return "sala/verSala";
 	}
 }

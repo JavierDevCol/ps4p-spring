@@ -48,7 +48,7 @@ public class SalaController {
 		model.addAttribute("sala", sala);
 		model.addAttribute("titulo", "Crear Sala");
 		//model.addAttribute("listEdi", listEdificio());
-		return "sala/form";
+		return "sala/verSala";
 	}
 
 	@GetMapping(value = "/cargarAccesorios/{name}", produces = { "aplication/json" })
@@ -95,7 +95,7 @@ public class SalaController {
 		}
 		 model.addAttribute("sala", sala);
 		 model.addAttribute("titulo","Editar Sala");
-		 return "sala/form";
+		 return "sala/verSala";
 	 }
 	
 	@GetMapping("/verSala/{idSala}")

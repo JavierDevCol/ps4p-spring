@@ -10,7 +10,8 @@
 				<form th:action="@{/salas/save}" th:object="${sala}" method="post">			
 					<div class="form-group">
 						<label>Sala: </label> 
-						<input type="text"class="form-control" th:field="*{nombre}" disabled>
+						<input type="text"class="form-control" th:field="*{nombre}" th:if="${sala.nombre == null}" >
+						<input type="text"class="form-control" th:field="*{nombre}" th:if="${sala.nombre != null}" disabled>
 						</div>
 						<label>Edificio: </label>
 						 <input  class="form-control" type="text" th:field="*{edificio.nombre}" disabled> 

@@ -9,11 +9,11 @@
 			<u th:text="${titulo}"></u>
 		</h1>
 
-		<form th:action="@{/salas/form}" th:object="${sala}" method="post">
+		<form th:action="@{/salas/save}" th:object="${sala}" method="post">
 			<div class="row">
 				<div class="col">
-					<input type="text" class="form-control" th:value="${sala.edificio.nombre} + ' - '+ ${sala.edificio.alias}" disabled/>
-				</div>
+					<input type="text" class="form-control" th:value="*{edificio.nombre} + ' - '+ *{edificio.alias}" disabled/>
+				</div> 
 				<div class="col">
 					<input type="text" class="form-control" placeholder="Nombre Sala" required th:field="*{nombre}" />
 				</div>				

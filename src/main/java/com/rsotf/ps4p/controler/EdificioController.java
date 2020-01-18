@@ -58,7 +58,7 @@ public class EdificioController {
 		
 		edificioService.save(edificio);
 		status.setComplete();
-		flash.addFlashAttribute("success", "Cliente Creado con Exito");
+		flash.addFlashAttribute("success", "Edificio Creado con Exito");
 		return "redirect:/edificio/list";
 	}
 	

@@ -16,20 +16,19 @@
 		<thead>
 			<tr>
 				<th scope="col">Id</th>
-				<th scope="col">Nombre</th>
-				<th scope="col">Serial Inventario</th>
-				<th scope="col">Estado</th>
-				<th scope="col">Descripcion</th>
+				<th scope="col">Sala</th>
+				<th scope="col">Edificio</th>
+				<th scope="col" >Capacidad</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="acc: ${accesorio}">
-				<td th:text="${acc.id}"></td>
-				<td th:text="${acc.nombre}"></td>
-				<td th:text="${acc.numInventario}"></td>
-				<td th:text="${acc.descripcion}"></td>
-				<td > <a th:href="@{/accesorios/form/} + ${acc.id}" class="btn btn-primary">Editar</a> </td>
-				<td > <a th:href="@{/accesorios/delete/} + ${acc.id}" class="btn btn-danger">Eliminar</a> </td>
+			<tr th:each="sala: ${salas}">
+				<td th:text="${sala.id}"></td>
+				<td th:text="${sala.nombre}"></td>
+				<td th:text="${sala.edificio.nombre}"></td>
+				<td th:text="${sala.capacidadEst}" ></td>
+				<td > <a th:href="@{/salas/formE/} + ${sala.id}" class="btn btn-primary">Editar</a> </td>
+				<td > <a th:href="@{/salas/delete/} + ${sala.id}" class="btn btn-danger">Eliminar</a> </td>
 			</tr>
 		</tbody>
 	</table>

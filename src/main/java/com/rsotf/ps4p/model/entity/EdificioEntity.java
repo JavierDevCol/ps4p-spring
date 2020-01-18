@@ -40,5 +40,7 @@ public class EdificioEntity implements Serializable{
 			cascade = CascadeType.ALL
 			)
 	private List<SalaEntity> salas;
+	
+	
 
 }

@@ -11,3 +11,22 @@ INSERT INTO edificio (nombre, alias) VALUES ("Casona", "Casona");
 INSERT INTO edificio (nombre, alias) VALUES ("Torre Administrativa A", "TA");
 INSERT INTO edificio (nombre, alias) VALUES ("Torre Administrativa B", "TB");
 INSERT INTO edificio (nombre, alias) VALUES ("Cread", "CREAD");
+
+INSERT INTO accesorios (descripcion, estado, nombre, num_inventario, sala_id)  VALUES ("hola","bueno","tv", "123qwe", null);
+
+
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);
+INSERT INTO ps4p.sala (capacidad_est, nombre, edificio_id) values ("20", "402", 1);

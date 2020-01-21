@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html XMLS="HTTP://WWWW.THYMELEAF.ORG">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<div class="container">
+
+		<div class="card mb-3 my-5" style="max-width: 540px;">
+			<div class="row no-gutters">
+				<div class="col-md-4">
+					<img th:src="@{/images/fondoescritorio.jpg}"
+						style="width: 100%; height: 100%;" alt="Spring logo" />
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title">Login</h5>
+						<form th:action="@{/login}" method="post">
+							<div class="input-group flex-nowrap">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="addon-wrapping"><img
+										th:src="@{/images/businessman.png}" style="width: 15px;"
+										alt="Spring logo" /></span>
+								</div>
+								<input type="text" class="form-control" name="username" id="username"
+									placeholder="Username" aria-label="Username"
+									aria-describedby="addon-wrapping" autofocus required>
+							</div>
+							<br>
+							<div class="input-group flex-nowrap">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="addon-wrapping"><img
+										th:src="@{/images/vpn_key-24px.svg}" style="width: 15px;"
+										alt="Spring logo" /></span>
+								</div>
+								<input type="password" class="form-control" name="password" id="password"
+									placeholder="Password" aria-label="Username"
+									aria-describedby="addon-wrapping" required>
+							</div>
+							<br>
+
+							<p class="card-text">
+								<input type="submit" class="btn btn-success" value="Acceder">
+								
+							</p>
+							<div class="card-text">								
+								<p class="text-muted alert alert-danger" role="alert" th:if="${error != null}" th:text="${error}"></p>
+								<p class="text-muted alert alert-info" role="alert" th:if="${info != null}" th:text="${info}" ></p>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

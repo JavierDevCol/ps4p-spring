@@ -19,6 +19,30 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 		return new BCryptPasswordEncoder();
 	}
 	
+	
+	
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.authorizeRequests().antMatchers("/", "/css/**", "/js/**", "/images/**", "/salas/list",  "/edificio/list").permitAll()
+		
+		.antMatchers("/salas/formE/**").hasAnyRole("ADMIN")
+		.antMatchers("/salas/verSala/**").hasAnyRole("ADMIN")
+		.antMatchers("/salas/save/**").hasAnyRole("ADMIN")
+		.antMatchers("/salas/form/**").hasAnyRole("ADMIN")
+		.antMatchers("/salas/delete/**").hasAnyRole("ADMIN")
+		.antMatchers("/edificio/save").hasAnyRole("ADMIN")
+		.antMatchers("/edificio/form").hasAnyRole("ADMIN")
+		.antMatchers("/edificio/form/**").hasAnyRole("ADMIN")
+		.antMatchers("/edificio/delete/**").hasAnyRole("ADMIN")
+		.and()
+			.formLogin().loginPage("/login")
+			.permitAll()
+		.and()
+		.logout().permitAll();
+	}
+
+
+
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder builder) throws Exception{
 		
@@ -30,20 +54,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 			.withUser(users.username("brandon").password("12345").roles("USER"));
 	}
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/", "/css/**", "/js/**", "images/**", "/list", "/salas/verSala/**").permitAll()
-		.antMatchers("/ver/**").hasAnyRole("USER")
-		.antMatchers("/form/**").hasAnyRole("ADMIN")
-		.antMatchers("/formE/**").hasAnyRole("ADMIN")
-		.antMatchers("/save/**").hasAnyRole("ADMIN")
-		.antMatchers("/form/**").hasAnyRole("ADMIN")
-		.anyRequest().authenticated()
-		.and()
-		.formLogin().permitAll()
-		.and()
-		.logout().permitAll();
-	}
+
 	
 	
 }

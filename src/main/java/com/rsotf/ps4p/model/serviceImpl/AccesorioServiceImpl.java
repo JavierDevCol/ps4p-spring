@@ -2,7 +2,7 @@ package com.rsotf.ps4p.model.serviceImpl;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,9 +19,10 @@ public class AccesorioServiceImpl implements IAccesorioService{
 	
 	
 	@Override
+	@Transactional(readOnly = true)
 	public AccesorioEntity findById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return accesorioDao.findById(id).orElse(null);
 	}
 
 	

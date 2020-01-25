@@ -24,13 +24,13 @@ import com.rsotf.ps4p.utils.PageRender;
 
 @Controller
 @SessionAttributes("edificio")
-@RequestMapping("/edificio")
+@RequestMapping({"/edificio", "/"})
 public class EdificioController {
 
 	@Autowired
 	private IEdificioService edificioService;
 	
-	@GetMapping("/list")
+	@GetMapping({"/list","/"})
 	public String listAll(@RequestParam(name="page", defaultValue = "0") int page, Model model){
 		
 		Pageable pageRequest =  PageRequest.of(page, 5);

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -57,8 +58,7 @@ public class AccesorioController {
 		SalaEntity sala = null;
 		if (accesorio.getSala() != null) {
 			sala = salaService.findById(accesorio.getSala().getId());
-		}
-		
+		}		
 		accesorio.setSala(sala);
 		accesorioService.save(accesorio);
 		status.setComplete();
@@ -66,11 +66,26 @@ public class AccesorioController {
 		return "redirect:/accesorios/list";		
 	}
 	
-	@GetMapping("/form")
-	public String form(Model model) {
+	@GetMapping({"/form/{sala}", "/form"})
+	public String form(Model model, @RequestParam(value = "sala", defaultValue = "0") Long sala) {
+		
 		AccesorioEntity accesorio = new AccesorioEntity();
+		if ( sala > 0) {
+			SalaEntity sal = salaService.findById(sala);
+			accesorio.setSala(sal);
+		}		
 		model.addAttribute("accesorio", accesorio);
 		model.addAttribute("titulo", "Crear nuevo Accesorio");
+		return "accesorios/form";
+	}
+	
+	@GetMapping("/formE/{id}")
+	public String formE(Model model, @PathVariable(value = "id") Long id) {
+		
+		AccesorioEntity accesorio = accesorioService.findById(id);	
+		System.out.println(accesorio.getSala());
+		model.addAttribute("accesorio", accesorio);
+		model.addAttribute("titulo", "Editar  Accesorio");
 		return "accesorios/form";
 	}
 	

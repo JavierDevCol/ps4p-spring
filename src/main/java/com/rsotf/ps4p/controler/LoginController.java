@@ -17,8 +17,7 @@ public class LoginController {
 		if (principal != null) {
 			flash.addFlashAttribute("info","Ya ha iniciado sesion anteriormente");
 			return "redirect:/edificio/list";
-		}
-		
+		}		
 		if (error != null) {
 			model.addAttribute("error", "Error en el Login: Nombre del usuario o contraseña incorrectos");
 		}

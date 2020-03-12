@@ -42,7 +42,7 @@ public class AccesorioServiceImpl implements IAccesorioService{
 
 	@Override
 	public AccesorioEntity findByNumInventario(String serial) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

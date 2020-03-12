@@ -34,20 +34,20 @@ public class SalaServiceImpl implements ISalaService{
 
 	@Override
 	public void save(SalaEntity sala) {
-		// TODO Auto-generated method stub
+		
 		salaDao.save(sala);
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		
 		salaDao.deleteById(id);
 	}
 
 	@Override
 	@Transactional()
 	public List<AccesorioEntity> findByNombreLikeIgnoreCase(String name) {
-		// TODO Auto-generated method stub
+		
 		return accesorioDao.findByNombreLikeIgnoreCase(name);
 	}
 

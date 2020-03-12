@@ -1,6 +1,6 @@
 package com.rsotf.ps4p.model.serviceImpl;
 
-import java.util.List;
+// import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -45,7 +45,7 @@ public class EdificioServiceImpl implements IEdificioService {
 
 	@Override
 	public Page<EdificioEntity> listAll(Pageable pageable) {
-		// TODO Auto-generated method stub
+		
 		return edificioDao.findAll(pageable);
 	}
 

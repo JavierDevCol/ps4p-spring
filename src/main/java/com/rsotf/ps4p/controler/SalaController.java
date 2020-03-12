@@ -1,5 +1,6 @@
 package com.rsotf.ps4p.controler;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -76,7 +77,7 @@ public class SalaController {
 	}
 	
 	public List<String> listEdificio(){		
-		List<String> list = null;
+		List<String> list = new ArrayList<String>();
 		List<EdificioEntity> ed = salaService.findEdificioAll();
 		for (EdificioEntity string : ed) {
 			list.add(string.getNombre());
